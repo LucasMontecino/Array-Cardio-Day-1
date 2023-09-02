@@ -59,48 +59,23 @@ const people = [
 
 // Array.prototype.filter()
 // 1. Filter the list of inventors for those who were born in the 1500's
-const arrFilter = inventors.filter((el) => el.year >= 1500 && el.year < 1600);
-// console.table(arrFilter);
 
 // Array.prototype.map()
 // 2. Give us an array of the inventors first and last names
-const arrMap = inventors.map((el) => `${el.first} ${el.last}`);
-// console.log(arrMap);
 
 // Array.prototype.sort()
 // 3. Sort the inventors by birthdate, oldest to youngest
-const arrSort = inventors.sort((a, b) => a.year - b.year);
-// console.table(arrSort);
 
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live all together?
-const arrayReduce = inventors.reduce((acc, el) => {
-  return acc + (el.passed - el.year);
-}, 0);
-
-// console.log(arrayReduce, "Array Inventors Reduce Inventors Live All Together");
 
 // 5. Sort the inventors by years lived
-const arrayYearsLived = inventors.sort((a, b) => {
-  const firstGuy = a.passed - a.year;
-  const lastGuy = b.passed - b.year;
-  return firstGuy > lastGuy ? -1 : 1;
-});
-// console.table(arrayYearsLived);
+
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
 // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
-// const category = document.querySelector(".mw-category");
-// const links = category.querySelectorAll("a");
-// const de = Array.from(links).map(link => link.textContent).filter(el => el.includes("de"));
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
-const peopleSort = people.sort((a, b) => {
-  const [aLast, aFirst] = a.split(", ");
-  const [bLast, bFirst] = b.split(", ");
-  return aLast > bLast ? 1 : -1;
-});
-// console.table(peopleSort);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
@@ -120,11 +95,3 @@ const data = [
   "car",
   "truck",
 ];
-
-const reduceData = data.reduce((obj, item) => {
-  if (!obj.hasOwnProperty(item)) obj[item] = 0;
-  obj[item]++;
-  return obj;
-}, {});
-
-// console.log(reduceData);
